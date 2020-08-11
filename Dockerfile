@@ -22,7 +22,9 @@ RUN mkdir $GOPATH
 ENV PATH $GOPATH/bin:$PATH
 
 RUN go get github.com/yudai/gotty
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod 755 /entrypoint.sh
+
 
 EXPOSE 80
-
-CMD [ "nginx", "-g", "daemon off;" ]    
+ENTRYPOINT ["/entrypoint.sh"]    
