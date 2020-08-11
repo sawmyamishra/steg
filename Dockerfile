@@ -17,6 +17,7 @@ RUN apt-get update && \
     pip3 install pillow && \
     apt-get clean
 
+ENV TERM xterm
 ENV GOPATH /usr/go
 RUN mkdir $GOPATH
 ENV PATH $GOPATH/bin:$PATH
