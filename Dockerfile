@@ -8,8 +8,8 @@ ADD steglsb.py ./steglsb.py
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-RUN apt-get update && apt install -y golang git curl wget
-    go get github.com/yudai/gotty
+RUN apt-get update && \
+    apt install -y golang git curl wget && \
     apt-get install python3-pip -y && \
     apt-get install apache2 -y && \
     apt install -y golang git curl wget && \
